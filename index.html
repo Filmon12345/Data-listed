@@ -51,5 +51,57 @@
           ">ADD</button></div>
   </div>
       <div class="js-result"></div>
+
+      <script>
+
+        let array = [];
+        renderValue = () => {
+          let valueHolder = '';
+    
+          const { data, date } = array;
+          array.forEach((item, index) => {
+    
+    let html =`<p class="js-list list1">
+      <div class="list">
+      <div>${item.data}</div>
+      <div>${item.date}</div>
+      <div><button
+       onclick="
+      
+       array.splice(${index},1)
+       
+       renderValue()
+       "
+       class="Delete">Delete</button></div>
+      </div>
+       </p>`
+    
+            valueHolder += html;
+          })
+          document.querySelector('.js-result').innerHTML = valueHolder;
+        }
+    
+      addValue = () => {
+    
+          const dataValue = document.querySelector('.js-input');
+          const dateValue = document.querySelector('.js-date');
+    
+          data = dataValue.value;
+          date = dateValue.value;
+          if (data != '' && date != '') {
+            array.push({
+    
+              data,
+              date
+            });
+            dataValue.value = '';
+            renderValue();
+    
+          } else alert('Input required');
+        }
+       
+    
+    
+      </script>
 </body>
 </html>
