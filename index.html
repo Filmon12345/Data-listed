@@ -38,6 +38,18 @@
           </style>
 </head>
 <body>
-    
+    <h1>Add Data to The Dashboard</h1>
+    <div class="list3">
+      <div><input type="text" placeholder="Add To do list" onkeydown="
+          if(event.key==='Enter'){
+            addValue();
+          }
+          " class="js-input"></div>
+          <div> <input type="date" class="js-date"></div>
+     <div><button onclick="
+          addValue();
+          ">ADD</button></div>
+  </div>
+      <div class="js-result"></div>
 </body>
 </html>
